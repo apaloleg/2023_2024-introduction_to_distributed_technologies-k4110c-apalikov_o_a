@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: react-cfg
+  namespace: labs
+data:
+  REACT_APP_USERNAME: test_username
+  REACT_APP_COMPANY_NAME: test_company

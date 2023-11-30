@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: react-ingress
+  namespace: labs
+  labels:
+    name: react-ingess
+spec:
+  tls:
+    - hosts:
+      - example.com
+      secretName: mycert
+  rules:
+  - host: example.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: react
+            port:
+              number: 3000
